@@ -137,9 +137,10 @@ sub gather_files {
       added_by         => $self->meta->name,
       code_return_type => 'text',
       code             => sub { $self->_gen_ini },
-    }
+    },
   );
   $self->add_file($file);
+  return;
 }
 __PACKAGE__->meta->make_immutable;
 no Moose;
