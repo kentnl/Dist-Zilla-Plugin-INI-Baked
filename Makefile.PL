@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker ;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "# AUTHORITY",
+  "ABSTRACT" => "Add a baked version of your configuration to tree automatically",
   "AUTHOR" => "Kent Fredric <kentfredric\@gmail.com>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
@@ -20,7 +20,13 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Dist::Zilla::Plugin::INI::Baked",
   "PREREQ_PM" => {
+    "Dist::Zilla::File::FromCode" => 0,
+    "Dist::Zilla::Role::FileGatherer" => 0,
+    "Dist::Zilla::Util::CurrentCmd" => "0.002000",
+    "Dist::Zilla::Util::ExpandINI" => 0,
+    "MooX::Lsub" => 0,
     "Moose" => 0,
+    "Path::Tiny" => 0,
     "strict" => 0,
     "utf8" => 0,
     "warnings" => 0
@@ -38,9 +44,15 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
+  "Dist::Zilla::File::FromCode" => 0,
+  "Dist::Zilla::Role::FileGatherer" => 0,
+  "Dist::Zilla::Util::CurrentCmd" => "0.002000",
+  "Dist::Zilla::Util::ExpandINI" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
+  "MooX::Lsub" => 0,
   "Moose" => 0,
+  "Path::Tiny" => 0,
   "Test::More" => "0.89",
   "strict" => 0,
   "utf8" => 0,
