@@ -88,7 +88,6 @@ do { my $x = {
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec' => '0',
                                    'Test::DZil' => '0',
-                                   'Test::Differences' => '0',
                                    'Test::More' => '0.89'
                                  }
                  }

@@ -4,7 +4,6 @@ use warnings;
 use Test::More;
 use Test::DZil;
 use Path::Tiny;
-use Test::Differences;
 
 # ABSTRACT: Test basic thing
 
