@@ -5,6 +5,8 @@ author:
 build_requires:
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'
+  Test::DZil: '0'
+  Test::Differences: '0'
   Test::More: '0.89'
 configure_requires:
   ExtUtils::MakeMaker: '0'
@@ -23,7 +25,7 @@ requires:
   Dist::Zilla::File::FromCode: '0'
   Dist::Zilla::Role::FileGatherer: '0'
   Dist::Zilla::Util::CurrentCmd: '0.002000'
-  Dist::Zilla::Util::ExpandINI: '0'
+  Dist::Zilla::Util::ExpandINI: '0.001001'
   MooX::Lsub: '0'
   Moose: '0'
   Path::Tiny: '0'
@@ -95,6 +97,8 @@ x_BuiltWith:
     Pod::Coverage::TrustPod: '0.100003'
     Test::CPAN::Changes: '0.30'
     Test::CPAN::Meta: '0.23'
+    Test::DZil: '5.020'
+    Test::Differences: '0.62'
     Test::Kwalitee: '1.19'
     Test::More: '1.001003'
     Test::Pod: '1.48'

@@ -16,7 +16,7 @@ use MooX::Lsub qw( lsub );
 use Dist::Zilla::File::FromCode;
 use Dist::Zilla::Util::CurrentCmd 0.002000 qw( as_cmd );
 use Path::Tiny qw( path );
-use Dist::Zilla::Util::ExpandINI;
+use Dist::Zilla::Util::ExpandINI 0.001001;
 
 with 'Dist::Zilla::Role::FileGatherer';
 
