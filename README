@@ -30,9 +30,9 @@ SYNOPSIS
 
     I recommend:
 
-    *   "[CopyFilesFromBuild]|Dist::Zilla::Plugin::CopyFilesFromBuild ">
+    *   "[CopyFilesFromBuild]"
 
-    *   "[CopyFilesFromRelease]|Dist::Zilla::Plugin::CopyFilesFromRelease ">
+    *   "[CopyFilesFromRelease]"
 
     *   Passing exclude rules to "[Git::GatherDir]"
 
@@ -75,14 +75,4 @@ COPYRIGHT AND LICENSE
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
-
-POD ERRORS
-    Hey! The above document had some coding errors, which are explained
-    below:
-
-    Around line 195:
-        Unterminated L< ... > sequence
-
-    Around line 197:
-        Unterminated L< ... > sequence
 

@@ -192,9 +192,9 @@ I recommend:
 
 =over 4
 
-=item * L<< C<[CopyFilesFromBuild]|Dist::Zilla::Plugin::CopyFilesFromBuild >>
+=item * L<< C<[CopyFilesFromBuild]>|Dist::Zilla::Plugin::CopyFilesFromBuild >>
 
-=item * L<< C<[CopyFilesFromRelease]|Dist::Zilla::Plugin::CopyFilesFromRelease >>
+=item * L<< C<[CopyFilesFromRelease]>|Dist::Zilla::Plugin::CopyFilesFromRelease >>
 
 =item * Passing exclude rules to L<< C<[Git::GatherDir]>|Dist::Zilla::Plugin::Git::GatherDir >>
 
