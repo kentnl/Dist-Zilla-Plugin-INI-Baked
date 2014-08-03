@@ -1,10 +1,68 @@
 # NAME
 
-Dist::Zilla::Plugin::INI::Baked - # AUTHORITY
+Dist::Zilla::Plugin::INI::Baked - Add a baked version of your configuration to tree automatically
 
 # VERSION
 
 version 0.001000
+
+# SYNOPSIS
+
+    # somewhere in dist.ini or even your bundle
+    [INI::Baked]
+    ; filename        = dist.ini.baked
+    ; source_filename = dist.ini
+
+    # and and
+    dzil build
+
+    # and and
+    cat $MYDIST/dist.ini.baked  # yay
+
+Whether you wish to
+
+- Copy that file back to `root/`
+- Name that file `dist.ini`
+- Add/Not add the original `dist.ini` to your built code.
+
+All these choices are your discretion, and are presently expected to master other dzil plugins to make this possible.
+
+I recommend:
+
+- [`[CopyFilesFromBuild]`](https://metacpan.org/pod/Dist::Zilla::Plugin::CopyFilesFromBuild)
+- [`[CopyFilesFromRelease]`](https://metacpan.org/pod/Dist::Zilla::Plugin::CopyFilesFromRelease)
+- Passing exclude rules to [`[Git::GatherDir]`](https://metacpan.org/pod/Dist::Zilla::Plugin::Git::GatherDir)
+- Passing exclude rules to [`[GatherDir]`](https://metacpan.org/pod/Dist::Zilla::Plugin::GatherDir)
+
+These will of course all still work, because `source_filename` is read directly from `$zilla->root`
+
+Patches to make it read from `$zilla->files` will be accepted, but YAGNI for now.
+
+# METHODS
+
+## `gather_files`
+
+This module subscribes to the [`-FileGatherer`](https://metacpan.org/pod/Dist::Zilla::Role::FileGatherer) role.
+
+As such, this module injects a [`FromCode`](https://metacpan.org/pod/Dist::Zilla::File::FromCode) object during the gather phase.
+
+# ATTRIBUTES
+
+## `filename`
+
+The name of the file to emit.
+
+**DEFAULT**:
+
+    dist.ini.baked
+
+## `source_filename`
+
+The name of the file to read
+
+**DEFAULT:**
+
+    dist.ini
 
 # AUTHOR
 
