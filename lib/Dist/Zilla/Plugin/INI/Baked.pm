@@ -30,6 +30,7 @@ with 'Dist::Zilla::Role::FileGatherer';
 
 
 
+lsub 'filename' => sub { 'dist.ini.baked' };
 
 
 
@@ -38,7 +39,9 @@ with 'Dist::Zilla::Role::FileGatherer';
 
 
 
-lsub 'filename'        => sub { 'dist.ini.baked' };
+
+
+
 lsub 'source_filename' => sub { 'dist.ini' };
 
 lsub '_root'        => sub { path( $_[0]->zilla->root ) };
