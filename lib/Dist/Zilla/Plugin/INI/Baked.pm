@@ -20,54 +20,6 @@ use Dist::Zilla::Util::ExpandINI 0.001001;
 
 with 'Dist::Zilla::Role::FileGatherer';
 
-=head1 SYNOPSIS
-
-  # somewhere in dist.ini or even your bundle
-  [INI::Baked]
-  ; filename        = dist.ini.baked
-  ; source_filename = dist.ini
-
-  # and and
-  dzil build
-
-  # and and
-  cat $MYDIST/dist.ini.baked  # yay
-
-Whether you wish to
-
-=over 4
-
-=item * Copy that file back to C<root/>
-
-=item * Name that file C<dist.ini>
-
-=item * Add/Not add the original C<dist.ini> to your built code.
-
-
-=back
-
-All these choices are your discretion, and are presently expected to master other dzil plugins to make this possible.
-
-I recommend:
-
-=over 4
-
-=item * L<< C<[CopyFilesFromBuild]>|Dist::Zilla::Plugin::CopyFilesFromBuild >>
-
-=item * L<< C<[CopyFilesFromRelease]>|Dist::Zilla::Plugin::CopyFilesFromRelease >>
-
-=item * Passing exclude rules to L<< C<[Git::GatherDir]>|Dist::Zilla::Plugin::Git::GatherDir >>
-
-=item * Passing exclude rules to L<< C<[GatherDir]>|Dist::Zilla::Plugin::GatherDir >>
-
-=back
-
-These will of course all still work, because C<source_filename> is read directly from C<< $zilla->root >>
-
-Patches to make it read from C<< $zilla->files >> will be accepted, but YAGNI for now.
-
-=cut
-
 =attr C<filename>
 
 The name of the file to emit.
@@ -75,6 +27,10 @@ The name of the file to emit.
 B<DEFAULT>:
 
   dist.ini.baked
+
+=cut
+
+lsub 'filename' => sub { 'dist.ini.baked' };
 
 =attr C<source_filename>
 
@@ -86,7 +42,6 @@ B<DEFAULT:>
 
 =cut
 
-lsub 'filename'        => sub { 'dist.ini.baked' };
 lsub 'source_filename' => sub { 'dist.ini' };
 
 lsub '_root'        => sub { path( $_[0]->zilla->root ) };
@@ -146,3 +101,51 @@ __PACKAGE__->meta->make_immutable;
 no Moose;
 
 1;
+
+=head1 SYNOPSIS
+
+  # somewhere in dist.ini or even your bundle
+  [INI::Baked]
+  ; filename        = dist.ini.baked
+  ; source_filename = dist.ini
+
+  # and and
+  dzil build
+
+  # and and
+  cat $MYDIST/dist.ini.baked  # yay
+
+Whether you wish to
+
+=over 4
+
+=item * Copy that file back to C<root/>
+
+=item * Name that file C<dist.ini>
+
+=item * Add/Not add the original C<dist.ini> to your built code.
+
+
+=back
+
+All these choices are your discretion, and are presently expected to master other dzil plugins to make this possible.
+
+I recommend:
+
+=over 4
+
+=item * L<< C<[CopyFilesFromBuild]>|Dist::Zilla::Plugin::CopyFilesFromBuild >>
+
+=item * L<< C<[CopyFilesFromRelease]>|Dist::Zilla::Plugin::CopyFilesFromRelease >>
+
+=item * Passing exclude rules to L<< C<[Git::GatherDir]>|Dist::Zilla::Plugin::Git::GatherDir >>
+
+=item * Passing exclude rules to L<< C<[GatherDir]>|Dist::Zilla::Plugin::GatherDir >>
+
+=back
+
+These will of course all still work, because C<source_filename> is read directly from C<< $zilla->root >>
+
+Patches to make it read from C<< $zilla->files >> will be accepted, but YAGNI for now.
+
+=cut
