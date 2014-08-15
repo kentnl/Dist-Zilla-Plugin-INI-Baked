@@ -38,54 +38,6 @@ with 'Dist::Zilla::Role::FileGatherer';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 lsub 'filename'        => sub { 'dist.ini.baked' };
 lsub 'source_filename' => sub { 'dist.ini' };
 
