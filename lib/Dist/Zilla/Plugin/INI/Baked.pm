@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::INI::Baked;
 
-our $VERSION = '0.001001';
+our $VERSION = '0.001002';
 
 # ABSTRACT: Add a baked version of your configuration to tree automatically
 
