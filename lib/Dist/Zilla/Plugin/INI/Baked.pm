@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Plugin::INI::Baked;
 
-our $VERSION = '0.001000';
+our $VERSION = '0.001001';
 
 # ABSTRACT: Add a baked version of your configuration to tree automatically
 
@@ -30,6 +30,7 @@ with 'Dist::Zilla::Role::FileGatherer';
 
 
 
+lsub 'filename' => sub { 'dist.ini.baked' };
 
 
 
@@ -41,52 +42,6 @@ with 'Dist::Zilla::Role::FileGatherer';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-lsub 'filename'        => sub { 'dist.ini.baked' };
 lsub 'source_filename' => sub { 'dist.ini' };
 
 lsub '_root'        => sub { path( $_[0]->zilla->root ) };
@@ -159,7 +114,7 @@ Dist::Zilla::Plugin::INI::Baked - Add a baked version of your configuration to t
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 SYNOPSIS
 

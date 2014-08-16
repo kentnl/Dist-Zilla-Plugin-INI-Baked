@@ -3,7 +3,7 @@ NAME
     configuration to tree automatically
 
 VERSION
-    version 0.001000
+    version 0.001001
 
 SYNOPSIS
       # somewhere in dist.ini or even your bundle
