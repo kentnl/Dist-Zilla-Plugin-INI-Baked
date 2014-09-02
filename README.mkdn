@@ -4,7 +4,7 @@ Dist::Zilla::Plugin::INI::Baked - Add a baked version of your configuration to t
 
 # VERSION
 
-version 0.001002
+version 0.002000
 
 # SYNOPSIS
 

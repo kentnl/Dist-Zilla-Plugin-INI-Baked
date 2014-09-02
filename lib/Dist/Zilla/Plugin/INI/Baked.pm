@@ -5,18 +5,19 @@ use utf8;
 
 package Dist::Zilla::Plugin::INI::Baked;
 
-our $VERSION = '0.001002';
+our $VERSION = '0.002000';
 
 # ABSTRACT: Add a baked version of your configuration to tree automatically
 
 # AUTHORITY
 
-use Moose qw( with has );
+use Moose qw( with has around );
 use MooX::Lsub qw( lsub );
 use Dist::Zilla::File::FromCode;
 use Dist::Zilla::Util::CurrentCmd 0.002000 qw( as_cmd );
 use Path::Tiny qw( path );
 use Dist::Zilla::Util::ExpandINI 0.001001;
+use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 with 'Dist::Zilla::Role::FileGatherer';
 
@@ -46,6 +47,8 @@ lsub 'source_filename' => sub { 'dist.ini' };
 
 lsub '_root'        => sub { path( $_[0]->zilla->root ) };
 lsub '_source_file' => sub { $_[0]->_root->child( $_[0]->source_filename ) };
+
+around dump_config => config_dumper( __PACKAGE__, qw( filename source_filename ) );
 
 sub _gen_preamble {
   my ($self) = @_;
