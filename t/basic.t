@@ -14,7 +14,7 @@ my $new_ini;
 subtest "Pass one" => sub {
 
   my $scratch = dztest();
-  $scratch->add_file('dist.ini', $ini );
+  $scratch->add_file( 'dist.ini', $ini );
   $scratch->build_ok;
   my $nini = $scratch->test_has_built_file('dist.ini.baked');
   is( ( scalar grep { /;/ } $nini->lines_raw( { chomp => 1 } ) ), 3, 'Three comment lines' );
@@ -24,7 +24,7 @@ subtest "Pass one" => sub {
 };
 subtest "Pass Two" => sub {
   my $scratch = dztest();
-  $scratch->add_file('dist.ini', $new_ini );
+  $scratch->add_file( 'dist.ini', $new_ini );
   $scratch->build_ok;
 
   my $nini = $scratch->test_has_built_file('dist.ini.baked');

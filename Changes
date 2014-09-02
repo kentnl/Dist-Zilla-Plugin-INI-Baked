@@ -1,13 +1,18 @@
 Release history for Dist-Zilla-Plugin-INI-Baked
 
-0.002000 2014-09-02T07:30:11Z
+0.002000 2014-09-02T08:06:29Z
  [00 Minor]
  - Add dump_config
+ - tests refactored.
 
  [Dependencies::Stats]
  - Dependencies changed since 0.001001, see misc/*.deps* for details
  - develop: +1 ↑1 (suggests: ↑2)
  - runtime: +1
+ - test: +1
+
+ [Tests]
+ - implemented now in dztest
 
 0.001001 2014-08-15T21:16:43Z
  [00 Trivial]
