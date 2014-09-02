@@ -20,7 +20,7 @@ name: Dist-Zilla-Plugin-INI-Baked
 provides:
   Dist::Zilla::Plugin::INI::Baked:
     file: lib/Dist/Zilla/Plugin/INI/Baked.pm
-    version: '0.002000'
+    version: '0.002001'
 requires:
   Dist::Zilla::File::FromCode: '0'
   Dist::Zilla::Role::FileGatherer: '0'
@@ -38,7 +38,7 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-Plugin-INI-Baked/issues
   homepage: https://github.com/kentnl/Dist-Zilla-Plugin-INI-Baked
   repository: https://github.com/kentnl/Dist-Zilla-Plugin-INI-Baked.git
-version: '0.002000'
+version: '0.002001'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.142060'
@@ -447,7 +447,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: '0'
-          tag: 0.002000-source
+          tag: 0.002001-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -501,7 +501,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: '0'
-          tag: '0.002000'
+          tag: '0.002001'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local
