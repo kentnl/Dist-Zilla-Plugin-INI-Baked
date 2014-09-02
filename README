@@ -3,7 +3,7 @@ NAME
     configuration to tree automatically
 
 VERSION
-    version 0.001001
+    version 0.002000
 
 SYNOPSIS
       # somewhere in dist.ini or even your bundle
@@ -67,7 +67,7 @@ ATTRIBUTES
       dist.ini
 
 AUTHOR
-    Kent Fredric <kentfredric@gmail.com>
+    Kent Fredric <kentnl@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2014 by Kent Fredric

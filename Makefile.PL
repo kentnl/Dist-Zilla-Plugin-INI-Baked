@@ -11,7 +11,7 @@ use ExtUtils::MakeMaker ;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Add a baked version of your configuration to tree automatically",
-  "AUTHOR" => "Kent Fredric <kentfredric\@gmail.com>",
+  "AUTHOR" => "Kent Fredric <kentnl\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
   },
@@ -22,6 +22,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Dist::Zilla::File::FromCode" => 0,
     "Dist::Zilla::Role::FileGatherer" => 0,
+    "Dist::Zilla::Util::ConfigDumper" => 0,
     "Dist::Zilla::Util::CurrentCmd" => "0.002000",
     "Dist::Zilla::Util::ExpandINI" => "0.001001",
     "MooX::Lsub" => 0,
@@ -32,12 +33,13 @@ my %WriteMakefileArgs = (
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
+    "Dist::Zilla::Util::Test::KENTNL" => "1.003001",
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
     "Test::DZil" => 0,
     "Test::More" => "0.89"
   },
-  "VERSION" => "0.001001",
+  "VERSION" => "0.002000",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -47,8 +49,10 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Dist::Zilla::File::FromCode" => 0,
   "Dist::Zilla::Role::FileGatherer" => 0,
+  "Dist::Zilla::Util::ConfigDumper" => 0,
   "Dist::Zilla::Util::CurrentCmd" => "0.002000",
   "Dist::Zilla::Util::ExpandINI" => "0.001001",
+  "Dist::Zilla::Util::Test::KENTNL" => "1.003001",
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
   "MooX::Lsub" => 0,
