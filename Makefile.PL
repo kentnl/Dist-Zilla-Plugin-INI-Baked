@@ -22,6 +22,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Dist::Zilla::File::FromCode" => 0,
     "Dist::Zilla::Role::FileGatherer" => 0,
+    "Dist::Zilla::Util::ConfigDumper" => 0,
     "Dist::Zilla::Util::CurrentCmd" => "0.002000",
     "Dist::Zilla::Util::ExpandINI" => "0.001001",
     "MooX::Lsub" => 0,
@@ -37,7 +38,7 @@ my %WriteMakefileArgs = (
     "Test::DZil" => 0,
     "Test::More" => "0.89"
   },
-  "VERSION" => "0.001002",
+  "VERSION" => "0.002000",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
@@ -47,6 +48,7 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Dist::Zilla::File::FromCode" => 0,
   "Dist::Zilla::Role::FileGatherer" => 0,
+  "Dist::Zilla::Util::ConfigDumper" => 0,
   "Dist::Zilla::Util::CurrentCmd" => "0.002000",
   "Dist::Zilla::Util::ExpandINI" => "0.001001",
   "ExtUtils::MakeMaker" => 0,

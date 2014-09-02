@@ -84,6 +84,7 @@
          "requires" : {
             "Dist::Zilla::File::FromCode" : "0",
             "Dist::Zilla::Role::FileGatherer" : "0",
+            "Dist::Zilla::Util::ConfigDumper" : "0",
             "Dist::Zilla::Util::CurrentCmd" : "0.002000",
             "Dist::Zilla::Util::ExpandINI" : "0.001001",
             "MooX::Lsub" : "0",
@@ -112,7 +113,7 @@
    "provides" : {
       "Dist::Zilla::Plugin::INI::Baked" : {
          "file" : "lib/Dist/Zilla/Plugin/INI/Baked.pm",
-         "version" : "0.001002"
+         "version" : "0.002000"
       }
    },
    "release_status" : "stable",
@@ -127,7 +128,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-Plugin-INI-Baked"
       }
    },
-   "version" : "0.001002",
+   "version" : "0.002000",
    "x_BuiltWith" : {
       "modules" : {
          "CPAN::Meta" : "2.142060",
@@ -179,6 +180,7 @@
          "Dist::Zilla::Plugin::UploadToCPAN" : "5.020",
          "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.020000",
          "Dist::Zilla::Role::FileGatherer" : "5.020",
+         "Dist::Zilla::Util::ConfigDumper" : "0.003004",
          "Dist::Zilla::Util::CurrentCmd" : "0.002001",
          "Dist::Zilla::Util::ExpandINI" : "0.001003",
          "ExtUtils::MakeMaker" : "6.98",
@@ -636,7 +638,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.001002-source",
+                  "tag" : "0.002000-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -650,9 +652,6 @@
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::NextRelease",
-            "config" : {
-               "Dist::Zilla::Plugin::Git::NextRelease" : {}
-            },
             "name" : "@Author::KENTNL/Git::NextRelease",
             "version" : "0.003000"
          },
@@ -710,7 +709,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "0.001002",
+                  "tag" : "0.002000",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
