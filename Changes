@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Plugin-INI-Baked
 
 {{$NEXT}}
+
+0.002000 2014-09-02T08:08:38Z
  [00 Minor]
  - Add dump_config
  - tests refactored.
