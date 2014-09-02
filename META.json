@@ -103,6 +103,7 @@
             "Test::More" : "1.001003"
          },
          "requires" : {
+            "Dist::Zilla::Util::Test::KENTNL" : "1.003001",
             "ExtUtils::MakeMaker" : "0",
             "File::Spec" : "0",
             "Test::DZil" : "0",
@@ -183,6 +184,7 @@
          "Dist::Zilla::Util::ConfigDumper" : "0.003004",
          "Dist::Zilla::Util::CurrentCmd" : "0.002001",
          "Dist::Zilla::Util::ExpandINI" : "0.001003",
+         "Dist::Zilla::Util::Test::KENTNL" : "1.003001",
          "ExtUtils::MakeMaker" : "6.98",
          "File::Spec" : "3.49",
          "MooX::Lsub" : "0.002000",
