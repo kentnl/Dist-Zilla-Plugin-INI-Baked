@@ -19,4 +19,7 @@ srcreadme         = mkdn
 twitter_hash_tags = #perl #cpan
 ; auto_prereqs_skip = File::Find
 
-[Prereqs]
+[Prereqs / ExpandINI With Comments]
+-phase = test
+-relationship = recommends
+Dist::Zilla::Util::ExpandINI = 0.003000
