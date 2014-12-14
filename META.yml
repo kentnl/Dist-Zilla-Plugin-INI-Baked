@@ -594,7 +594,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Prereqs:
           phase: test
           type: recommends
-      name: Test
+      name: 'ExpandINI With Comments'
       version: '5.028'
     -
       class: Dist::Zilla::Plugin::FinderCode

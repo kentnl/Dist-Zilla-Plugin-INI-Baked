@@ -839,7 +839,7 @@
                   "type" : "recommends"
                }
             },
-            "name" : "Test",
+            "name" : "ExpandINI With Comments",
             "version" : "5.028"
          },
          {

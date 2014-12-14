@@ -14,8 +14,10 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Test::EOL
  - Test::More
 
- [Added / test requires]
+ [Added / test recommends]
  - Dist::Zilla::Util::ExpandINI 0.003000
+
+ [Added / test requires]
  - Test::Requires
  - perl 5.008
 
@@ -28,9 +30,6 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Changed / develop suggests]
  - Dist::Zilla::App::Command::bakeini 0.001002 → 0.002000
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.020000 → 2.022001
-
- [Changed / runtime requires]
- - Dist::Zilla::Util::ExpandINI 0.001001 → 0.003000
 
  [Changed / test recommends]
  - ExtUtils::MakeMaker 6.98 → 7.04
