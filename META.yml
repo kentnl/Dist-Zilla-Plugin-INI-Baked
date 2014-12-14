@@ -3,7 +3,6 @@ abstract: 'Add a baked version of your configuration to tree automatically'
 author:
   - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
-  Dist::Zilla::Util::ExpandINI: '0.003000'
   Dist::Zilla::Util::Test::KENTNL: '1.003001'
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'
@@ -30,7 +29,7 @@ requires:
   Dist::Zilla::Role::FileGatherer: '0'
   Dist::Zilla::Util::ConfigDumper: '0'
   Dist::Zilla::Util::CurrentCmd: '0.002000'
-  Dist::Zilla::Util::ExpandINI: '0.003000'
+  Dist::Zilla::Util::ExpandINI: '0.001001'
   MooX::Lsub: '0'
   Moose: '0'
   Path::Tiny: '0'
@@ -594,7 +593,7 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Prereqs:
           phase: test
-          type: requires
+          type: recommends
       name: Test
       version: '5.028'
     -

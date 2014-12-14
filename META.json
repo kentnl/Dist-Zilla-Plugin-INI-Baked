@@ -93,7 +93,7 @@
             "Dist::Zilla::Role::FileGatherer" : "0",
             "Dist::Zilla::Util::ConfigDumper" : "0",
             "Dist::Zilla::Util::CurrentCmd" : "0.002000",
-            "Dist::Zilla::Util::ExpandINI" : "0.003000",
+            "Dist::Zilla::Util::ExpandINI" : "0.001001",
             "MooX::Lsub" : "0",
             "Moose" : "0",
             "Path::Tiny" : "0",
@@ -106,11 +106,11 @@
       "test" : {
          "recommends" : {
             "CPAN::Meta" : "2.120900",
+            "Dist::Zilla::Util::ExpandINI" : "0.003000",
             "ExtUtils::MakeMaker" : "7.04",
             "Test::More" : "1.001009"
          },
          "requires" : {
-            "Dist::Zilla::Util::ExpandINI" : "0.003000",
             "Dist::Zilla::Util::Test::KENTNL" : "1.003001",
             "ExtUtils::MakeMaker" : "0",
             "File::Spec" : "0",
@@ -836,7 +836,7 @@
             "config" : {
                "Dist::Zilla::Plugin::Prereqs" : {
                   "phase" : "test",
-                  "type" : "requires"
+                  "type" : "recommends"
                }
             },
             "name" : "Test",
