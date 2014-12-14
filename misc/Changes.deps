@@ -1,6 +1,20 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-0.002000
+0.002001
+ [Added / configure requires]
+ - perl 5.006
+
+ [Added / test requires]
+ - Test::Requires
+ - perl 5.006
+
+ [Changed / runtime requires]
+ - perl 5.008 → 5.006
+
+ [Removed / runtime requires]
+ - utf8
+
+0.002000 2014-09-02T08:08:38Z
  [Added / runtime requires]
  - Dist::Zilla::Util::ConfigDumper
 
