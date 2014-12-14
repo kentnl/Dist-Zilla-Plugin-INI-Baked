@@ -100,6 +100,7 @@ do { my $x = {
                                    'File::Spec' => '0',
                                    'Test::DZil' => '0',
                                    'Test::More' => '0.89',
+                                   'Test::Requires' => '0',
                                    'perl' => '5.008'
                                  }
                  }
