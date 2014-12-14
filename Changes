@@ -1,6 +1,10 @@
 Release history for Dist-Zilla-Plugin-INI-Baked
 
-0.002001 2014-12-14T04:40:32Z 4a85f8e
+0.002001 2014-12-14T04:52:34Z 9d4b90a
+ [Bugfix]
+ - Adjust test to only operate with latest ExpandINI
+ - Adjust test to expect comment-copy
+
  [Dependencies::Stats]
  - Dependencies changed since 0.002000, see misc/*.deps* for details
  - configure: +1 (recommends: ↑1)
