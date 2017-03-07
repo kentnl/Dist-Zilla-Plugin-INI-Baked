@@ -1,87 +1,28 @@
-NAME
+Dist::Zilla::Plugin::INI::Baked
 
-    Dist::Zilla::Plugin::INI::Baked - Add a baked version of your
-    configuration to tree automatically
 
-VERSION
 
-    version 0.002002
+INSTALLATION
 
-SYNOPSIS
+This is a Perl module distribution. It should be installed with whichever
+tool you use to manage your installation of Perl, e.g. any of
 
-      # somewhere in dist.ini or even your bundle
-      [INI::Baked]
-      ; filename        = dist.ini.baked
-      ; source_filename = dist.ini
-    
-      # and and
-      dzil build
-    
-      # and and
-      cat $MYDIST/dist.ini.baked  # yay
+  cpanm .
+  cpan  .
+  cpanp -i .
 
-    Whether you wish to
+Consult http://www.cpan.org/modules/INSTALL.html for further instruction.
+Should you wish to install this module manually, the procedure is
 
-      * Copy that file back to root/
-
-      * Name that file dist.ini
-
-      * Add/Not add the original dist.ini to your built code.
-
-    All these choices are your discretion, and are presently expected to
-    master other dzil plugins to make this possible.
-
-    I recommend:
-
-      * [CopyFilesFromBuild]
-
-      * [CopyFilesFromRelease]
-
-      * Passing exclude rules to [Git::GatherDir]
-
-      * Passing exclude rules to [GatherDir]
-
-    These will of course all still work, because source_filename is read
-    directly from $zilla->root
-
-    Patches to make it read from $zilla->files will be accepted, but YAGNI
-    for now.
-
-METHODS
-
- gather_files
-
-    This module subscribes to the -FileGatherer role.
-
-    As such, this module injects a FromCode object during the gather phase.
-
-ATTRIBUTES
-
- filename
-
-    The name of the file to emit.
-
-    DEFAULT:
-
-      dist.ini.baked
-
- source_filename
-
-    The name of the file to read
-
-    DEFAULT:
-
-      dist.ini
-
-AUTHOR
-
-    Kent Fredric <kentnl@cpan.org>
+  perl Makefile.PL
+  make
+  make test
+  make install
 
 COPYRIGHT AND LICENSE
 
-    This software is copyright (c) 2014 by Kent Fredric
-    <kentfredric@gmail.com>.
+This software is copyright (c) 2017 by Kent Fredric
+<kentfredric@gmail.com>.
 
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
-
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.

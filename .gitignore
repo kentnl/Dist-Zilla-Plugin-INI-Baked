@@ -1,2 +1,3 @@
-.build
-Dist-Zilla-Plugin-INI-Baked-*
+/.build
+/Dist-Zilla-Plugin-INI-Baked-*
+/tmp/
