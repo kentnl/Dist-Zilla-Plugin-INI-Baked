@@ -16,7 +16,6 @@ use Dist::Zilla::File::FromCode;
 use Dist::Zilla::Util::CurrentCmd 0.002000 qw( as_cmd );
 use Path::Tiny qw( path );
 use Dist::Zilla::Util::ExpandINI 0.001001;
-use Dist::Zilla::Util::ConfigDumper qw( config_dumper );
 
 with 'Dist::Zilla::Role::FileGatherer';
 
@@ -47,7 +46,19 @@ lsub 'source_filename' => sub { 'dist.ini' };
 lsub '_root'        => sub { path( $_[0]->zilla->root ) };
 lsub '_source_file' => sub { $_[0]->_root->child( $_[0]->source_filename ) };
 
-around dump_config => config_dumper( __PACKAGE__, qw( filename source_filename ) );
+around dump_config => sub {
+  my ( $orig, $self, @args ) = @_;
+  my $config = $self->$orig(@args);
+  my $localconf = $config->{ +__PACKAGE__ } = {};
+
+  $localconf->{filename} = $self->filename;
+  $localconf->{source_filename} = $self->source_filename;
+
+  $localconf->{ q[$] . __PACKAGE__ . '::VERSION' } = $VERSION
+    unless __PACKAGE__ eq ref $self;
+
+  return $config;
+};
 
 sub _gen_preamble {
   my ($self) = @_;

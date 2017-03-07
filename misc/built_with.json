@@ -54,7 +54,6 @@
       "Dist::Zilla::Plugin::UploadToCPAN" : "6.009",
       "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.025021",
       "Dist::Zilla::Role::FileGatherer" : "6.009",
-      "Dist::Zilla::Util::ConfigDumper" : "0.003007",
       "Dist::Zilla::Util::CurrentCmd" : "0.002003",
       "Dist::Zilla::Util::ExpandINI" : "0.003003",
       "Dist::Zilla::Util::Test::KENTNL" : "1.005013",
