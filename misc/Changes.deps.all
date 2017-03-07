@@ -41,6 +41,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Removed / develop requires]
  - Dist::Zilla::Plugin::MetaYAML
 
+ [Removed / runtime requires]
+ - Dist::Zilla::Util::ConfigDumper
+
 0.002001 2014-12-14T07:19:50Z
  [Added / configure requires]
  - perl 5.006
