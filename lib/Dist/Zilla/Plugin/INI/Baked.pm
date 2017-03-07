@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::INI::Baked;
 
-our $VERSION = '0.002002';
+our $VERSION = '0.002003';
 
 # ABSTRACT: Add a baked version of your configuration to tree automatically
 
@@ -127,7 +127,7 @@ Dist::Zilla::Plugin::INI::Baked - Add a baked version of your configuration to t
 
 =head1 VERSION
 
-version 0.002002
+version 0.002003
 
 =head1 SYNOPSIS
 
