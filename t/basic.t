@@ -6,8 +6,7 @@ use Test::Requires {
   'Dist::Zilla::Util::ExpandINI' => '0.003000',    # Comment copying
 };
 
-use Test::DZil;
-use Dist::Zilla::Util::Test::KENTNL 1.003001 qw( dztest );
+use Test::DZil qw( simple_ini Builder );
 use Path::Tiny;
 
 # ABSTRACT: Test basic thing
@@ -17,26 +16,26 @@ my $new_ini;
 
 subtest "Pass one" => sub {
 
-  my $scratch = dztest();
-  $scratch->add_file( 'dist.ini', $ini );
-  $scratch->build_ok;
-  my $nini = $scratch->test_has_built_file('dist.ini.baked');
+  my $zilla = Builder->from_config( { dist_root => 'invalid', }, { add_files => { 'source/dist.ini' => $ini, }, } );
+  $zilla->chrome->logger->set_debug(1);
+  $zilla->build;
+  my $nini = path( $zilla->tempdir, 'build', 'dist.ini.baked' );
+  ok( -e $nini, "New baked INI path exists" );
   is( ( scalar grep { /;/ } $nini->lines_raw( { chomp => 1 } ) ), 3, 'Three comment lines' );
   ok( ( scalar grep { /Dist::Zilla::PluginBundle::Basic/ } $nini->lines_raw( { chomp => 1 } ) ), 'Expanded lines' );
   ok( ( scalar grep { /INI::Baked/ } $nini->lines_raw( { chomp => 1 } ) ), 'Baked entry' );
   $new_ini = $nini->slurp_raw;
 };
 subtest "Pass Two" => sub {
-  my $scratch = dztest();
-  $scratch->add_file( 'dist.ini', $new_ini );
-  $scratch->build_ok;
+  my $zilla = Builder->from_config( { dist_root => 'also-invalid', }, { add_files => { 'source/dist.ini' => $new_ini }, } );
+  $zilla->chrome->logger->set_debug(1);
+  $zilla->build;
 
-  my $nini = $scratch->test_has_built_file('dist.ini.baked');
-
+  my $nini = path( $zilla->tempdir, 'build', 'dist.ini.baked' );
+  ok( -e $nini, "New baked INI path exists" );
   is( ( scalar grep { /;/ } $nini->lines_raw( { chomp => 1 } ) ), 6, 'Three comment lines' );
   ok( ( scalar grep { /Dist::Zilla::PluginBundle::Basic/ } $nini->lines_raw( { chomp => 1 } ) ), 'Expanded lines' );
   ok( ( scalar grep { /INI::Baked/ } $nini->lines_raw( { chomp => 1 } ) ), 'Baked entry' );
 };
 
 done_testing;
-
